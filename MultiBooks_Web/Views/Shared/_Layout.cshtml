@@ -1,0 +1,81 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"] - MultiBooks</title>
+  <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="~/css/site.css" />
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js" defer></script>
+</head>
+<body>
+  <header class="navbar navbar-expand-md navbar-light bg-light px-3">
+    <a href="#" class="navbar-brand">
+      <img src="~/images/imagesLayout/tile.png" alt="Logo MultiBooks">
+    </a>
+    <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-content">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbar-content">
+      <nav>
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link text-dark" asp-area="Customer" asp-controller="Home" asp-action="Index">Home</a>
+          </li>
+          <li class="nav-item"><a class="nav-link text-dark" asp-area="Customer" asp-controller="Home" asp-action="Privacy">Privacy</a></li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Administration</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" asp-area="Admin" asp-controller="Home" asp-action="Index">Administration's Dashboard</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" asp-area="Admin" asp-controller="Subject" asp-action="Index">Manage Subjects</a></li>
+              
+              <li><a class="dropdown-item" asp-area="Admin" asp-controller="Publisher" asp-action="">Manage Publishers</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Authors</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" asp-area="Authors" asp-controller="Home" asp-action="Index">Author's Dashboard</a></li>
+              <li><a class="dropdown-item" ref="#">À venir...</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Publishers</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" asp-area="Publishers" asp-controller="Home" asp-action="Index">Publisher's Dashboard</a></li>
+              <li><a class="dropdown-item" asp-area="Publishers" asp-controller="Book" asp-action="Index">Manage Books</a></li>
+              <li><a class="dropdown-item" ref="#">À venir...</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#">Customers</a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" asp-area="Customers" asp-controller="Home" asp-action="Index">Customer's Dashboard</a></li>
+              <li><a class="dropdown-item" ref="#">À venir...</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      
+
+    </div>
+  </header>
+  <div class="container">
+    <main role="main" class="pb-3">
+      @RenderBody()
+    </main>
+  </div>
+
+  <footer class="border-top footer text-dark bg-success">
+    <div class="container">
+      &copy; 2022 - MultiBooks - 5W5-Programmation Web avancée <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    </div>
+  </footer>
+  <script src="~/lib/jquery/dist/jquery.min.js"></script>
+  <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="~/js/site.js" asp-append-version="true"></script>
+  @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
